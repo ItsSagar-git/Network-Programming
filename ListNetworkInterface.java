@@ -3,10 +3,15 @@ import java.util.*;
 
 public class ListNetworkInterface {
     public static void main(String[] args) throws SocketException {
-        Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();    
-        while(interfaces.hasMoreElements()) {
+        // Get a list of all network interfaces
+        Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
+
+        // Iterate through all network interfaces
+        while (interfaces.hasMoreElements()) {
             NetworkInterface ni = interfaces.nextElement();
-            System.out.println("Interface: " + ni.getName());
-        }    
+            System.out.println("Interface Name: " + ni.getName());
+           
+            System.out.println();
+        }
     }
 }
